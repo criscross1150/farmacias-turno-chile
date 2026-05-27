@@ -9,7 +9,7 @@ def procesar(datos):
     por_tipo = df.groupby("TipoEstablecimientoGlosa")["EstablecimientoCodigo"].count().reset_index()
     por_tipo.columns = ["tipo", "total"]
 
-   urgencia = df[df["TieneServicioUrgencia"] == "SI"].groupby("RegionGlosa")["EstablecimientoCodigo"].count().reset_index()
+    urgencia = df[df["TieneServicioUrgencia"] == "Si"].groupby("RegionGlosa")["EstablecimientoCodigo"].count().reset_index()
     urgencia.columns = ["region", "total"]
 
     return por_region, por_tipo, urgencia
